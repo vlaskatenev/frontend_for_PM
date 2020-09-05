@@ -8,7 +8,13 @@ Project working with Webpack, SCSS.
 
 Requirements - node.js.
 
-For start:
+For install all dependencies:
+
+```sh
+$ npm i
+```
+
+For start project:
 
 ```sh
 $ npm start
