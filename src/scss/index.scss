@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import "~normalize.css";
+
+//@import "variables";
+@import "mixins";
+//@import "indexPage";
+//@import "toolbar";
+//@import "formula";
+//@import "table";
+//@import "dashboard";
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  overflow: scroll;
+}
+
+.input {
+  padding: 10px 17px;
+  /*padding-left: 17px;*/
+  font-size: 1.5em;
+  outline: none;
+  height: 45px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 800px;
+}
+.menu {
+  left: 0;
+  right: 5px;
+  /*top: 34px;*/
+  display: flex;
+  margin-right: -100px;
+  float: right;
+}
+
+.menu > div {
+  padding: 0px 10px 0px 0px;
+  color: #000;
+}
+
+.page {
+  max-width: 900px; /* Ширина элемента в пикселах */
+  padding: 10px; /* Поля вокруг текста */
+  margin: auto; /* Выравниваем по центру */
+}
+.form{
+  position:relative;
+  width:100%;
+  height:100px;
+  margin: 31px auto;
+  //margin-top: 31px;
+
+}
+.button{
+  @include button(green);
+}
+
+table {
+  border-spacing: 0; /* Расстояние между ячейками */
+  max-width: 100%; /* Ширина элемента в пикселах */
+  padding: 10px; /* Поля вокруг текста */
+  margin: auto;
+}
+
+tr > th {
+  left: 0;
+  right: 5px;
+  /*top: 34px;*/
+  border-bottom: 2px solid #9ea7a9;
+  padding: 15px 10px;
+  font-size: 1.5em;
+  text-align: center;
+
+}
+
+tr > td {
+  margin: 10px;
+  padding: 10px;
+  border-bottom: 2px solid #9ea7a9;
+}
+
+.value__row {
+  left: 0;
+  right: 5px;
+  /*top: 34px;*/
+  display: flex;
+}
+
+.soft {
+  max-width: 80%; /* Ширина элемента в пикселах */
+  padding: 10px; /* Поля вокруг текста */
+  margin: auto;
+}
+
+.nameSoftBlock {
+  left: 0;
+  right: 5px;
+  padding: 15px 10px;
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.soft > p {
+  border-bottom: 2px solid #9ea7a9;
+  padding: 10px 10px;
+}

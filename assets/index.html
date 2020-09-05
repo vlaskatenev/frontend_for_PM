@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Пример работы AJAX</title>
+</head>
+<body>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<form class="form-inline d-inline" id="someId" method="post">
+  <button class="dropdown-item btn" name="name" value="1">one</button>
+  <button class="dropdown-item btn" name="name" value="2">two</button>
+  <button class="dropdown-item btn" name="name" value="3">three</button>
+  <button class="dropdown-item btn" name="name" value="4">four</button>
+  <div class="dropdown-divider"></div>
+  <div class="input-group mx-2">
+    <input type="text" class="form-control" name="name" placeholder="Количество">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button"><i class="fas fa-arrow-alt-circle-right"></i></button>
+    </div>
+  </div>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+</script>
+<script>
+	$(document).ready(function() {
+  $('button').click(function(e) {
+    // Stop form from sending request to server
+    e.preventDefault()
+
+    var btn = $(this)
+
+    $.ajax({
+      method: "POST",
+      url: "http://127.0.0.1:8000/api/v1/cars/car/create",
+      headers: {
+        "Authorization":"Token 7733dc2d568c835f377356af276c202aa9e15c56",
+    },
+      dataType: "json",
+      data: {
+        "name": btn.val(),
+        'input': $('input').val()
+      },
+      success: function(data) {
+        console.log(data.data[0])
+      },
+      error: function(er) {
+        console.log('Была ошибка: ', er)
+      }
+    })
+  })
+})
+</script>
+</body>
+</html>
