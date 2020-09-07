@@ -3,8 +3,152 @@
 <head>
   <meta charset="utf-8">
   <title>Диспетчер задач</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+    }
+
+    .menu {
+      left: 0;
+      right: 5px;
+      display: flex;
+      margin-right: -100px;
+      float: right;
+      background-color: aqua;
+    }
+
+    .menu > div {
+      padding: 0px 10px 0px 0px;
+      color: #000;
+      display: block;
+      height: 25px;
+    }
+
+    .page {
+      max-width: 900px; /* Ширина элемента в пикселах */
+      padding: 10px; /* Поля вокруг текста */
+      margin: auto; /* Выравниваем по центру */
+    }
+    .iconGroup {
+      display: flex;
+      margin-top:50px;
+    }
+    .icon {
+      right:20px;
+      top:12px;
+      width: 350px;
+      height: 200px;
+      background-color: red;
+      margin: 10px;
+
+    }
+    .icon>div {
+      width: 100%;
+      height: 180px;
+      background-color: green;
+
+    }
+    .process {
+      background-color: blue;
+      width: 100%;
+      height: 200px;
+    }
+    table {
+      border-spacing: 0; /* Расстояние между ячейками */
+      max-width: 100%; /* Ширина элемента в пикселах */
+      padding: 10px; /* Поля вокруг текста */
+      margin: auto;
+    }
+
+    tr > th {
+      left: 0;
+      right: 5px;
+      /*top: 34px;*/
+      border-bottom: 2px solid #9ea7a9;
+      padding: 15px 10px;
+      font-size: 1.5em;
+      text-align: center;
+
+    }
+
+    tr > td {
+      margin: 10px;
+      padding: 10px;
+      border-bottom: 2px solid #9ea7a9;
+    }
+
+    .descriptionPercent {
+      border-right: none;
+      margin: 0;
+      padding: 0px;
+    }
+    .description {
+      font-size: 1em;
+      font-weight: normal;
+    }
+    .caption {
+      border: none;
+      margin: 0;
+      padding: 0px;
+    }
+
+  </style>
 </head>
 <body>
-
+<div id="app">
+  <div class="page">
+    <nav>
+      <div class="menu">
+        <div><a href="/">Главная</a></div>
+        <div><a href="running_process">Запущенные установки</a></div>
+        <div><a href="history">Просмотр логов</a></div>
+      </div>
+    </nav>
+    <main>
+      <div class="iconGroup">
+        <div class="icon">
+          <h3>CPU</h3>
+          <div></div>
+        </div>
+        <div class="icon">
+          <h3>RAM</h3>
+          <div></div>
+        </div>
+      </div>
+      <div class="process">
+        <table>
+          <caption>
+            <th class="caption">Name</th>
+            <th class="caption">CPU</th>
+            <th class="caption">Memory</th>
+            <th class="caption">Disk</th>
+            <th class="caption">Network</th>
+          </caption>
+          <tr class="descriptionPercent">
+            <th class="description"></th>
+            <th class="description">20%</th>
+            <th class="description">29%</th>
+            <th class="description">20%</th>
+            <th class="description">2%</th>
+          </tr>
+          <tr>
+            <td>GoogleChrome.exe</td>
+            <td>10%</td>
+            <td>250MB</td>
+            <td>45MB/sec</td>
+            <td>0</td>
+          </tr>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
 </body>
 </html>
